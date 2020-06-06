@@ -1,0 +1,9 @@
+FROM ubuntu
+
+RUN apt-get
+RUN apt-get install curl -y
+CMD curl -o /dev/null --silent --head --write-out '%{http_code}\n' https://www.google.com
+
+# command
+# docker build -t check_status_google .
+# docker run check_status_google:latest

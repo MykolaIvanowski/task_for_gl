@@ -1,0 +1,55 @@
+GET book/{language}/{categories}/{years}
+Name get_list_of_book_by_criteria
+Description "get list of book by criteria languages, categories, years"
+Parameters:
+languages
+categories
+years
+Code:
+200 successful operation
+400 invalid filter
+
+
+GET book/{id}/detail
+Name get_book_detail
+Description "get book details"
+Parameters:
+book_id id of book to return
+Code:
+200 successful operation
+400	invalid id supplied
+404 book not found
+
+
+GET book/{id}/comments
+Name get_book_comments
+Description "get all comments of book"
+Parameters:
+book_id id of book to return
+Code:
+200 successful operation
+400	invalid id supplied
+404 book not found
+
+
+PATCH /book/{id}/details
+Name update_book_details
+Description "Update book details"
+Parameters:
+book_id
+body book object that needs to be added to the store
+Code:
+400	invalid id supplied
+404 book not found
+405 validation exception
+
+
+DELETE book/{book_id}
+Name remove_book_by_id
+Description "removing book by id"
+Parameters:
+api_key api key
+book_id integer book id to delete
+Code:
+400 invalid id supplied
+404 book not fount
